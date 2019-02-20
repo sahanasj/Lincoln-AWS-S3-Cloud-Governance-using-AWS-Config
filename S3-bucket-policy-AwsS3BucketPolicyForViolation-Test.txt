@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SNSPublish",
+            "Effect": "Allow",
+            "Action": [
+                "sns:Publish"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3GetBucketACLandPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3PutBucketACLAccess",
+            "Effect": "Allow",
+            "Action": "s3:PutBucketAcl",
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Sid": "LambdaBasicExecutionAccess",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
